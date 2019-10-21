@@ -18,11 +18,19 @@ var Comment 			= require("./models/comment");
 var seedDB 				= require("./seeds");
 //seedDB();
 
-
-
 // CURRENT USER
 app.use(express.static(__dirname + "/public"));
-mongoose.connect('mongodb://localhost/yelp_camp_v10');
+//mongoose.connect('mongodb://localhost/yelp_camp_v10');
+mongoose.connect("mongodb+srv://thelonehegelian:V0fA$0asvs@a@cluster0-lot3f.mongodb.net/test?retryWrites=true&w=majority", {
+        useNewUrlParser: true, 
+		useCreateIndex : true
+    }).then(() => {
+	console.log('Connected to DB!');
+	
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
+				 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
