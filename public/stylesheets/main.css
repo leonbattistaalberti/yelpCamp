@@ -1,0 +1,14 @@
+.thumbnail img{
+	width: 100%;
+}
+
+#showThumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+#delete {
+	margin-top:9px;
+}
